@@ -17,11 +17,8 @@ public class BaseTestLambdaStep {
 
         step("Открыть Гитхаб", () -> open("https://github.com/"));
 
-        step("Ввести в поиск название страницы " + REPO, () -> {
-            $(".header-search-input").click();
-            $(".header-search-input").sendKeys(REPO);
-            $(".header-search-input").submit();
-        });
+        step("Ввести в поиск название страницы " + REPO, () ->
+                $(".header-search-input").setValue(REPO).submit());
 
         step("Проверка, что искомый репозиторий есть на странице", () -> {
             $(".repo-list").should(text(REPO));
