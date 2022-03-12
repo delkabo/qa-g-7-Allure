@@ -13,7 +13,7 @@ public class BaseTest {
     void baseTest() {
         //Открыть Гитхаб
         open("https://github.com/");
-        //Ввести в поиск название страницы "Docent321/qa_guru_2"
+        //Ввести в поиск название страницы "delkabo/qa-g-6-Junit-1"
         $(".header-search-input").click();
         $(".header-search-input").sendKeys("delkabo/qa-g-6-Junit-1");
         $(".header-search-input").submit();
