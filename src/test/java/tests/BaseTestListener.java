@@ -1,5 +1,7 @@
 package tests;
 
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
@@ -11,6 +13,7 @@ public class BaseTestListener {
 
     @Test
     void baseTestListener() {
+        SelenideLogger.addListener("allur", new AllureSelenide());
         //Открыть Гитхаб
         open("https://github.com/");
         //Ввести в поиск название страницы "delkabo/qa-g-6-Junit-1"
