@@ -13,25 +13,22 @@ public class BaseTestLambdaStep {
     private static final String REPO = "delkabo/qa-g-6-Junit-1";
 
     @Test
-            void baseTestLambdaStep() {
+    void baseTestLambdaStep() {
 
-        step("Открыть Гитхаб", () -> {
-                    open("https://github.com/");
-                });
+        step("Открыть Гитхаб", () -> open("https://github.com/"));
 
         step("Ввести в поиск название страницы " + REPO, () -> {
-                    $(".header-search-input").click();
-                    $(".header-search-input").sendKeys(REPO);
-                    $(".header-search-input").submit();
-                });
+            $(".header-search-input").click();
+            $(".header-search-input").sendKeys(REPO);
+            $(".header-search-input").submit();
+        });
 
         step("Проверка, что искомый репозиторий есть на странице", () -> {
-                    $(".repo-list").should(text(REPO));
-                    $(By.linkText("delkabo/qa-g-6-Junit-1")).click();
-                });
-
-        step("Проверить наличие поля Issue", () -> {
-            $("#issues-tab").should(text("issues"));
+            $(".repo-list").should(text(REPO));
+            $(By.linkText("delkabo/qa-g-6-Junit-1")).click();
         });
+
+        step("Проверить наличие поля Issue", () ->
+                $("#issues-tab").should(text("issues")));
     }
 }
