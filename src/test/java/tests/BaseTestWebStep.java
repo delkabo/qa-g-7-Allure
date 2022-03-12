@@ -12,8 +12,6 @@ public class BaseTestWebStep {
     @Test
     void webSteps() {
 
-        SelenideLogger.addListener("allure", new AllureSelenide());
-
         WebSteps steps = new WebSteps();
 
         steps.openMainPage();
