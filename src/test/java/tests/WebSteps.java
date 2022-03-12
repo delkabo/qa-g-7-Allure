@@ -1,7 +1,10 @@
 package tests;
 
+import com.codeborne.selenide.WebDriverRunner;
+import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
@@ -35,6 +38,7 @@ public class WebSteps {
     @Step("Checking for tabs Issue")
     public void checkIssueTab() {
         $("#issues-tab").should(text("issues"));
+        Allure.addAttachment("page", "text/html", WebDriverRunner.source(), ".html");
     }
 
 }
