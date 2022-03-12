@@ -24,7 +24,7 @@ public class WebSteps {
 
     @Step("Check if the repository is found {repo}")
     public void checkRepository(String repo) {
-        $(".repo-list").should(text("Docent321/qa_guru_2"));
+        $(".repo-list").should(text(repo));
     }
 
     @Step("Opening the repository {repo}")
